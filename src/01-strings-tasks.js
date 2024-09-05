@@ -207,15 +207,15 @@ function getRectangleString(width, height) {
   for (let i = 1; i <= height; i++) {
     let temp = '';
     if (i === 1) {
-      temp = '┌' + '-'.repeat(width - 2) + '┐' + '\n';
+      temp = `┌${'-'.repeat(width - 2)}┐` + '\n';
     } else if (i === height) {
-      temp = '└' + '-'.repeat(width - 2) + '┘' + '\n';
+      temp = `└${'-'.repeat(width - 2)}┘` + '\n';
     } else {
-      temp = '|' + ' '.repeat(width - 2) + '|' + '\n';
+      temp = `|${' '.repeat(width - 2)}|` + '\n';
     }
     str += temp;
   }
-  return temp;
+  return str;
 }
 
 
@@ -282,10 +282,10 @@ function isString(value) {
  *   'K♠' => 51
  */
 function getCardId(value) {
-  const cards = ['A♣','2♣','3♣','4♣','5♣','6♣','7♣','8♣','9♣','10♣','J♣','Q♣','K♣',
-    'A♦','2♦','3♦','4♦','5♦','6♦','7♦','8♦','9♦','10♦','J♦','Q♦','K♦',
-    'A♥','2♥','3♥','4♥','5♥','6♥','7♥','8♥','9♥','10♥','J♥','Q♥','K♥',
-    'A♠','2♠','3♠','4♠','5♠','6♠','7♠','8♠','9♠','10♠','J♠','Q♠','K♠'];
+  const cards = ['A♣', '2♣', '3♣', '4♣', '5♣', '6♣', '7♣', '8♣', '9♣', '10♣', 'J♣', 'Q♣', 'K♣',
+    'A♦', '2♦', '3♦', '4♦', '5♦', '6♦', '7♦', '8♦', '9♦', '10♦', 'J♦', 'Q♦', 'K♦',
+    'A♥', '2♥', '3♥', '4♥', '5♥', '6♥', '7♥', '8♥', '9♥', '10♥', 'J♥', 'Q♥', 'K♥',
+    'A♠', '2♠', '3♠', '4♠', '5♠', '6♠', '7♠', '8♠', '9♠', '10♠', 'J♠', 'Q♠', 'K♠'];
 
   return cards.indexOf(value);
 }
