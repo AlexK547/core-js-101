@@ -207,11 +207,11 @@ function getRectangleString(width, height) {
   for (let i = 1; i <= height; i += 1) {
     let temp = '';
     if (i === 1) {
-      temp = `┌${'-'.repeat(width - 2)}┐\n`;
+      temp = `┌${'─'.repeat(width - 2)}┐\n`;
     } else if (i === height) {
-      temp = `└${'-'.repeat(width - 2)}┘\n`;
+      temp = `└${'─'.repeat(width - 2)}┘\n`;
     } else {
-      temp = `|${' '.repeat(width - 2)}|\n`;
+      temp = `│${' '.repeat(width - 2)}│\n`;
     }
     str += temp;
   }
@@ -253,7 +253,10 @@ function encodeToRot13(/* str */) {
  *   isString(new String('test')) => true
  */
 function isString(value) {
-  return typeof value === 'string';
+  if ((typeof value) === 'object') {
+    return (value instanceof String);
+  }
+  return ((typeof value) === 'string');
 }
 
 
